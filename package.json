@@ -55,14 +55,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raahimkhan/raahimkhan23-react-native-responsive-utils.git"
+    "url": "git+https://github.com/raahimkhan/react-native-responsive-utils.git"
   },
   "author": "Muhammad Raahim Khan <muhammadr915@gmail.com> (https://github.com/raahimkhan)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/raahimkhan/raahimkhan23-react-native-responsive-utils/issues"
+    "url": "https://github.com/raahimkhan/react-native-responsive-utils/issues"
   },
-  "homepage": "https://github.com/raahimkhan/raahimkhan23-react-native-responsive-utils#readme",
+  "homepage": "https://github.com/raahimkhan/react-native-responsive-utils#readme",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
