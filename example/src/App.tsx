@@ -1,13 +1,24 @@
-import { View, StyleSheet } from 'react-native';
+import { useState, useEffect } from 'react';
+import {
+  setBaseScreenSize,
+  listenOrientationChange,
+  removeOrientationListener,
+} from '@raahimkhan23/react-native-responsive-utils';
+import { Portrait } from './Portrait';
+import { Landscape } from './Landscape';
 
 export default function App() {
-  return <View style={styles.container} />;
-}
+  useEffect(() => {
+    setBaseScreenSize(402, 874);
+    listenOrientationChange(setOrientation);
+    return () => {
+      removeOrientationListener();
+    };
+  }, []);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  const [orientation, setOrientation] = useState<'portrait' | 'landscape'>(
+    'portrait'
+  );
+
+  return orientation === 'portrait' ? <Portrait /> : <Landscape />;
+}
