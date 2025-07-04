@@ -31,6 +31,12 @@ To start the packager:
 yarn example start
 ```
 
+To start the packager with a clean state:
+
+```sh
+yarn example start:clean
+```
+
 To run the example app on Android:
 
 ```sh
@@ -59,7 +65,7 @@ yarn lint
 To fix formatting errors, run the following:
 
 ```sh
-yarn lint --fix
+yarn lint:fix
 ```
 
 Remember to add tests for your change if possible. Run the unit tests by:
@@ -106,6 +112,7 @@ The `package.json` file contains various scripts for common tasks:
 - `yarn`: setup project by installing dependencies.
 - `yarn typecheck`: type-check files with TypeScript.
 - `yarn lint`: lint files with ESLint.
+- `yarn lint:fix`: fix lint errors.
 - `yarn test`: run unit tests with Jest.
 - `yarn example start`: start the Metro server for the example app.
 - `yarn example android`: run the example app on Android.

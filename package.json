@@ -35,14 +35,23 @@
     "test": "jest",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "lint:fix": "yarn lint --fix",
     "clean": "del-cli lib",
     "prepare": "bob build",
     "release": "release-it"
   },
   "keywords": [
     "react-native",
-    "ios",
-    "android"
+    "responsive-ui",
+    "responsive-view",
+    "responsive-screen",
+    "responsive",
+    "scaling",
+    "ui-design",
+    "screen-size",
+    "mobile-ui",
+    "adaptive",
+    "cross-platform"
   ],
   "repository": {
     "type": "git",
@@ -55,6 +64,7 @@
   },
   "homepage": "https://github.com/raahimkhan/raahimkhan23-react-native-responsive-utils#readme",
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
