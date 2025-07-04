@@ -1,6 +1,6 @@
 # @raahimkhan23/react-native-responsive-utils
 
-![npm](https://img.shields.io/npm/v/@raahimkhan23/react-native-responsive-utils)
+[![npm](https://img.shields.io/npm/v/@raahimkhan23/react-native-responsive-utils)](https://www.npmjs.com/package/@raahimkhan23/react-native-responsive-utils)
 ![downloads](https://img.shields.io/npm/dm/@raahimkhan23/react-native-responsive-utils)
 
 A lightweight utility package for making React Native apps responsive across different screen sizes. It allows you to scale widths, heights, fonts, and images based on a configurable base screen size, enabling consistent layouts on different devices. The package includes both percentage based helpers as well as pixel based scaling functions for flexible UI design. It also supports listening to orientation changes and updating screen dimensions in real time. The utilities are designed to be minimal, easy to integrate, and highly effective for maintaining visual balance across screen types.
