@@ -111,17 +111,30 @@ const scaleImageHeight = (width: number, height: number): number => {
 };
 
 /**
- * scales a given font size based on the smaller screen dimension with optional clamping, rounded to the nearest pixel
+ * minimum and maximum clamping values for font scaling
+ */
+let MIN_FONT_SCALE = 0;
+let MAX_FONT_SCALE = 0;
+
+/**
+ * updates the minimum and maximum limits for font scaling clamp values
+ * @param minFontScale - minimum scale clamp for fonts
+ * @param maxFontScale - maximum scale clamp for fonts
+ */
+const setFontScaleLimits = (
+  minFontScale: number,
+  maxFontScale: number
+): void => {
+  MIN_FONT_SCALE = minFontScale;
+  MAX_FONT_SCALE = maxFontScale;
+};
+
+/**
+ * scales a given font size based on the smaller screen dimension with clamping, rounded to the nearest pixel
  * @param fontSize - the original font size
- * @param minFontScale - minimum value to clamp the scaled font size (default: 0)
- * @param maxFontScale - maximum value to clamp the scaled font size (default: 0)
  * @returns the scaled and clamped font size
  */
-const scaleFont = (
-  fontSize: number,
-  minFontScale: number = 0,
-  maxFontScale: number = 0
-): number => {
+const scaleFont = (fontSize: number): number => {
   // calculate the scale factor using the smaller dimension ratio of current and base screens
   const scaleDimension =
     Math.min(CURRENT_SCREEN_WIDTH, CURRENT_SCREEN_HEIGHT) /
@@ -130,8 +143,8 @@ const scaleFont = (
   const scaledSize = fontSize * scaleDimension;
   // clamp the scaled font size
   const scaledSizeWithClamp = Math.max(
-    fontSize - minFontScale,
-    Math.min(fontSize + maxFontScale, scaledSize)
+    fontSize - MIN_FONT_SCALE,
+    Math.min(fontSize + MAX_FONT_SCALE, scaledSize)
   );
   // return the scaled font size to the nearest pixel
   return PixelRatio.roundToNearestPixel(scaledSizeWithClamp);
@@ -199,6 +212,8 @@ export {
   BASE_SCREEN_HEIGHT,
   CURRENT_SCREEN_WIDTH,
   CURRENT_SCREEN_HEIGHT,
+  MIN_FONT_SCALE,
+  MAX_FONT_SCALE,
   setBaseScreenSize,
   listenOrientationChange,
   removeOrientationListener,
@@ -206,6 +221,7 @@ export {
   scaleHeight,
   scaleImageWidth,
   scaleImageHeight,
+  setFontScaleLimits,
   scaleFont,
   isIphoneModel,
   wp,
