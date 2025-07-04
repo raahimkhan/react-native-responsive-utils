@@ -45,21 +45,24 @@ Import the required utilities directly from the package:
 
 ```ts
 import {
+  BASE_SCREEN_WIDTH,
+  BASE_SCREEN_HEIGHT,
+  CURRENT_SCREEN_WIDTH,
+  CURRENT_SCREEN_HEIGHT,
+  MIN_FONT_SCALE,
+  MAX_FONT_SCALE,
+  setBaseScreenSize,
+  listenOrientationChange,
+  removeOrientationListener,
   scaleWidth,
   scaleHeight,
   scaleImageWidth,
   scaleImageHeight,
+  setFontScaleLimits,
   scaleFont,
+  isIphoneModel,
   wp,
   hp,
-  listenOrientationChange,
-  removeOrientationListener,
-  setBaseScreenSize,
-  isIphoneModel,
-  CURRENT_SCREEN_WIDTH,
-  CURRENT_SCREEN_HEIGHT,
-  BASE_SCREEN_WIDTH,
-  BASE_SCREEN_HEIGHT,
 } from '@raahimkhan23/react-native-responsive-utils';
 ```
 
@@ -75,6 +78,8 @@ The following variables and utility functions are available for use, helping wit
 | `BASE_SCREEN_HEIGHT`       | Variable | Base height used for scaling (defaults to iPhone 16 Pro height)                |
 | `CURRENT_SCREEN_WIDTH`     | Variable | Current device screen width. It is updated on orientation change if the listenOrientationChange function has been called                  |
 | `CURRENT_SCREEN_HEIGHT`    | Variable | Current device screen height. It is updated on orientation change if the listenOrientationChange function has been called                |
+| `MIN_FONT_SCALE`    | Variable | Minimum font scale clamp value. Defaults to 0                |
+| `MAX_FONT_SCALE`    | Variable | Maximum font scale clamp value. Defaults to 0                |
 | `setBaseScreenSize`        | Function | Updates the base screen width and height                  |
 | `listenOrientationChange`  | Function | Subscribes to orientation changes and updates screen dimensions            |
 | `removeOrientationListener`| Function | Removes the orientation change listener if it exists                       |
@@ -82,6 +87,7 @@ The following variables and utility functions are available for use, helping wit
 | `scaleHeight`              | Function | Scales a given height relative to current and base screen height           |
 | `scaleImageWidth`          | Function | Scales image width and rounds to nearest pixel                             |
 | `scaleImageHeight`         | Function | Scales image height while maintaining aspect ratio, rounded to nearest px  |
+| `setFontScaleLimits`                | Function | Updates the minimum and maximum limits for font scaling clamp values        |
 | `scaleFont`                | Function | Scales font size based on screen dimensions, with optional clamping        |
 | `isIphoneModel`            | Function | Checks if current device matches the dimensions of a known iPhone model    |
 | `wp`                       | Function | Converts width percentage to device independent pixels (dp)                |
